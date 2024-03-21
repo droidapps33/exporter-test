@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation fileTree(include: ['*.jar'], dir: 'libs/lib')
+//    implementation fileTree(include: ['*.jar'], dir: 'libs/ooxml-lib')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+
+//    implementation files('libs/poi-3.17.jar')
+//    implementation 'org.apache.poi:poi:5.2.5'
+//    implementation 'org.apache.poi:poi:4.0.0'
+//    implementation 'org.apache.poi:poi-ooxml:4.0.0'
+
+//    implementation 'javax.xml.stream:stax-api:1.0'
+//    implementation 'org.apache.logging.log4j:log4j-api:2.23.1'
+}
